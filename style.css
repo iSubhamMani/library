@@ -97,30 +97,33 @@ header > h1{
 .modal form .modal-actions{
     display: flex;
     gap: 10px;
+    font-family: inherit;
 }
 
 .modal form .modal-actions #cancel-modal{
     background-color: #e2e0e0;
-    color: #5e5e5e;
+    color: var(--secondary-txt-clr);
     padding: 8px;
     outline: none;
     border: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
+    font-family: inherit;
 }
 
 .modal form .modal-actions #submit-modal{
     background-color: #e2e0e0;
-    color: #5e5e5e;
+    color: var(--secondary-txt-clr);
     padding: 8px;
     outline: none;
     border: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
+    font-family: inherit;
 }
 
 .add-book{
