@@ -14,7 +14,13 @@ html{
     --bg-heading-clr: #EFEFEF;
     --bg-main-clr: #131225;
     --primary-txt-clr: #3ab598;
+    --secondary-txt-clr: #131225;
     --btn-hover-clr: #211f3f;
+    --cross-btn-clr: #ff5757;
+    --read-bg-clr: #A6E88F;
+    --read-txt-clr:#1E8641;
+    --not-read-bg-clr: #FF7070;
+    --not-read-txt-clr: #AD0909;
 }
 
 body{
@@ -43,14 +49,16 @@ header > h1{
 
     display: flex;
     justify-content: center;
-    padding: 32px 16px 12px 16px;
+    padding: 32px 16px;
 }
+
 
 .add-book .add-book-btn{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    font-weight: 500;
     color: var(--primary-txt-clr);
     gap: 8px;
     padding: 10px 16px;
@@ -68,6 +76,77 @@ header > h1{
     flex: 1;
 }
 
+.book-list > .book-container{
+    width: max(50%, 300px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.book-list > .book-container .card{
+    background-color: var(--bg-heading-clr);
+    padding: 16px 20px;
+    border-radius: 4px;
+}
+
+.book-list > .book-container .card .card-header{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.book-list > .book-container .card .card-header .title-container{
+    flex: 1;
+    display: grid;
+    grid-template: 1fr 1fr;
+}
+
+.book-list > .book-container .card .card-header .title-container > h1{
+    color: var(--secondary-txt-clr);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.book-list > .book-container .card .card-header .delete-book{
+    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    color: var(--cross-btn-clr);
+    cursor: pointer;
+}
+
+.book-list > .book-container .card .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.book-list > .book-container .card .card-body .read,
+.book-list > .book-container .card .card-body .not-read,
+.book-list > .book-container .card .card-body .author, 
+.book-list > .book-container .card .card-body .pages{
+    font-weight: 400;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    margin-top: 4px;
+}
+
+
+.book-list > .book-container .card .card-body .read{
+    background-color: var(--read-bg-clr);
+    color: var(--read-txt-clr);
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.book-list > .book-container .card .card-body .not-read{
+    background-color: var(--not-read-bg-clr);
+    color: var(--not-read-txt-clr);
+    padding: 2px 10px;
+    cursor: pointer;
+}
 
 footer{
     display: flex;
@@ -78,6 +157,7 @@ footer{
     background-color: var(--bg-main-clr);
     color: var(--primary-txt-clr);
     font-size: 1rem;
+    margin-top: 16px;
 }
 
 footer a{
