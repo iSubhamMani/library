@@ -44,6 +44,85 @@ header > h1{
     margin: 0 0 0 5%;
 }
 
+.modal{
+    width: max(25%, 300px);
+    padding: 30px 20px;
+    border: none;
+    border-radius: 4px;
+    margin: auto auto;
+}
+
+.modal form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal form label, .modal form input{
+    font-size: 1.2rem;
+}
+
+.modal form input{
+    border: none;
+    outline: none;
+}
+
+.modal form .data-text{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.modal form .data-text input{
+    border-bottom: 2px solid #b8b7b7;
+}
+
+.modal form .data-text input:focus{
+    border-bottom: 2px solid var(--primary-txt-clr);
+}
+
+.modal form .data-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 8px;
+}
+
+.modal form .data-checkbox input{
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.modal form .modal-actions{
+    display: flex;
+    gap: 10px;
+}
+
+.modal form .modal-actions #cancel-modal{
+    background-color: #e2e0e0;
+    color: #5e5e5e;
+    padding: 8px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.modal form .modal-actions #submit-modal{
+    background-color: #e2e0e0;
+    color: #5e5e5e;
+    padding: 8px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 .add-book{
     background-color: var(--bg-main-clr);
 

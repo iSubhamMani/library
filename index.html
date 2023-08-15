@@ -19,6 +19,30 @@
             <span>New book</span>
         </div>
     </section>
+    <dialog data-modal class="modal">
+        <form action="">
+            <div class="data-text">
+                <label for="book-title">Title</label>
+                <input type="text" id="book-title" required>
+            </div>
+            <div class="data-text">
+                <label for="book-title">Author</label>
+                <input type="text" id="book-author" required>
+            </div>
+            <div class="data-text">
+                <label for="book-title">No.of pages</label>
+                <input type="number" id="book-title" required>
+            </div>
+            <div class="data-checkbox">
+                <label for="book-read">Read?</label>
+                <input type="checkbox" id="book-read" required>
+            </div>
+            <div class="modal-actions">
+                <button id="cancel-modal">CANCEL</button>
+                <button id="submit-modal">OK</button>
+            </div>
+        </form> 
+    </dialog>
     <main class="book-list">
         <div class="book-container">
             
