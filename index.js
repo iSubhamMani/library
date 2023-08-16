@@ -25,18 +25,13 @@ function resetForm(){
 }
 
 function addBookToLibrary(){
-    // All fields are filled
-    if(bookTitle.value !== '' && bookAuthor.value !== '' &&
-    bookPages.value !== ''){
-        // Push a new book object to myLibrary arr
-        myLibrary.push(new Book(bookTitle.value, bookAuthor.value,
-            bookPages.value, bookRead.getAttribute('data-value')));
+    // Push a new book object to myLibrary arr
+    myLibrary.push(new Book(bookTitle.value, bookAuthor.value,
+        bookPages.value, bookRead.getAttribute('data-value')));
 
-        // Reset Form
-        resetForm();
-        console.log(myLibrary);
-    }
-    else return;
+    // Reset Form
+    resetForm();
+    console.log(myLibrary);
 }
 
 addBookBtn.addEventListener('click', () => {
@@ -57,7 +52,10 @@ bookRead.addEventListener('click', () => {
 })
 
 submitForm.addEventListener('click', (e) => {
-    e.preventDefault();
 
-    addBookToLibrary();
+    if(bookTitle.value !== '' && bookAuthor.value !== '' &&
+    bookPages.value !== ''){
+        e.preventDefault();
+        addBookToLibrary();
+    }
 })
