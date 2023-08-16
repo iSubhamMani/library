@@ -15,6 +15,7 @@ html{
     --bg-main-clr: #131225;
     --primary-txt-clr: #3ab598;
     --secondary-txt-clr: #131225;
+    --label-txt-clr: #9d9c9c;
     --btn-hover-clr: #211f3f;
     --cross-btn-clr: #ff5757;
     --read-bg-clr: #A6E88F;
@@ -58,8 +59,16 @@ header > h1{
     gap: 20px;
 }
 
-.modal form label, .modal form input{
+.modal form label{
+    color: var(--label-txt-clr);
     font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.modal form input{
+    color: var(--secondary-txt-clr);
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .modal form input{

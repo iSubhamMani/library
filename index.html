@@ -20,7 +20,7 @@
         </div>
     </section>
     <dialog data-modal class="modal">
-        <form action="">
+        <form class="form">
             <div class="data-text">
                 <label for="book-title">Title</label>
                 <input type="text" id="book-title" required>
@@ -31,15 +31,15 @@
             </div>
             <div class="data-text">
                 <label for="book-title">No.of pages</label>
-                <input type="number" id="book-title" required>
+                <input type="number" id="book-pages" required>
             </div>
             <div class="data-checkbox">
                 <label for="book-read">Read?</label>
-                <input type="checkbox" id="book-read" required>
+                <input type="checkbox" id="book-read" data-value="false">
             </div>
             <div class="modal-actions">
-                <button id="cancel-modal">CANCEL</button>
-                <button id="submit-modal">OK</button>
+                <button type="button" id="cancel-modal">CANCEL</button>
+                <button type="submit" id="submit-modal">OK</button>
             </div>
         </form> 
     </dialog>
