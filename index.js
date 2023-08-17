@@ -39,12 +39,12 @@ function displayLibrary(){
     // remove all cards
     bookList.innerHTML = '';
     //loop through library
-    myLibrary.forEach((item) => {
-        addBookToDOM(item.title, item.author, item.pages, item.read);
+    myLibrary.forEach((item, index) => {
+        addBookToDOM(item.title, item.author, item.pages, item.read, index);
     })
 }
 
-function addBookToDOM(title, author, pages, read){
+function addBookToDOM(title, author, pages, read, index){
 
     const card = document.createElement('div');
     card.classList.add('card');
@@ -63,6 +63,12 @@ function addBookToDOM(title, author, pages, read){
     deleteBook.classList.add('fa-solid');
     deleteBook.classList.add('fa-xmark');
     deleteBook.classList.add('delete-book');
+
+    deleteBook.addEventListener('click', () => {
+        myLibrary.splice(index, 1);
+        displayLibrary();
+    });
+
     cardHeader.appendChild(deleteBook);
 
     const bookTitle = document.createElement('h1');
