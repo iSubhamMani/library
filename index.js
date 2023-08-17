@@ -3,6 +3,7 @@ const modal = document.querySelector('[data-modal]');
 const cancelModal = document.getElementById('cancel-modal');
 const submitForm = document.getElementById('submit-modal');
 const form = document.querySelector('.form');
+const bookList = document.querySelector('.book-container');
 
 const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
@@ -10,6 +11,7 @@ const bookPages = document.getElementById('book-pages');
 const bookRead = document.getElementById('book-read');
 
 const myLibrary = [];
+let bookCounter = 0;
 
 function Book(title, author, pages, read){
     this.title = title;
@@ -31,7 +33,73 @@ function addBookToLibrary(){
 
     // Reset Form
     resetForm();
-    console.log(myLibrary);
+}
+
+function displayLibrary(){
+    // remove all cards
+    bookList.innerHTML = '';
+    //loop through library
+    myLibrary.forEach((item) => {
+        addBookToDOM(item.title, item.author, item.pages, item.read);
+    })
+}
+
+function addBookToDOM(title, author, pages, read){
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+    bookList.appendChild(card);
+    
+    // card header
+    const cardHeader = document.createElement('div');
+    cardHeader.classList.add('card-header');
+    card.appendChild(cardHeader);
+
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    cardHeader.appendChild(titleContainer);
+
+    const deleteBook = document.createElement('i');
+    deleteBook.classList.add('fa-solid');
+    deleteBook.classList.add('fa-xmark');
+    deleteBook.classList.add('delete-book');
+    cardHeader.appendChild(deleteBook);
+
+    const bookTitle = document.createElement('h1');
+    const titleText = document.createTextNode(title);
+    bookTitle.appendChild(titleText);
+    titleContainer.appendChild(bookTitle);
+
+    // card body
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+    card.appendChild(cardBody);
+
+    const readLabel = document.createElement('span');
+
+    if(read === 'true'){
+        readLabel.classList.add('read');
+        const readText = document.createTextNode('Read');
+        readLabel.appendChild(readText);
+    }
+    else{
+        readLabel.classList.add('not-read');
+        const readText = document.createTextNode('Not Read');
+        readLabel.appendChild(readText);
+    }
+    cardBody.appendChild(readLabel);
+
+    const authorLabel = document.createElement('span');
+    authorLabel.classList.add('author');
+    const authorText = document.createTextNode(author);
+    authorLabel.appendChild(authorText);
+    cardBody.appendChild(authorLabel);
+
+    const pagesLabel = document.createElement('span');
+    pagesLabel.classList.add('pages');
+    const pagesText = document.createTextNode(`Pages: ${pages}`);
+    pagesLabel.appendChild(pagesText);
+    cardBody.appendChild(pagesLabel);
 }
 
 addBookBtn.addEventListener('click', () => {
@@ -52,10 +120,10 @@ bookRead.addEventListener('click', () => {
 })
 
 submitForm.addEventListener('click', (e) => {
-
     if(bookTitle.value !== '' && bookAuthor.value !== '' &&
     bookPages.value !== ''){
         e.preventDefault();
         addBookToLibrary();
+        displayLibrary();
     }
 })
