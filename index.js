@@ -61,9 +61,10 @@ function addBookToDOM(title, author, pages, read, index){
 
     const deleteBook = document.createElement('i');
     deleteBook.classList.add('fa-solid');
-    deleteBook.classList.add('fa-xmark');
+    deleteBook.classList.add('fa-trash');
     deleteBook.classList.add('delete-book');
 
+    // delete book functionality
     deleteBook.addEventListener('click', () => {
         myLibrary.splice(index, 1);
         displayLibrary();
@@ -93,6 +94,16 @@ function addBookToDOM(title, author, pages, read, index){
         const readText = document.createTextNode('Not Read');
         readLabel.appendChild(readText);
     }
+
+    // Change read status
+    readLabel.addEventListener('click', () => {
+        const status = myLibrary[index].read;
+        if(status === 'true') myLibrary[index].read = 'false';
+        else myLibrary[index].read = 'true';
+
+        displayLibrary();
+    })
+
     cardBody.appendChild(readLabel);
 
     const authorLabel = document.createElement('span');
@@ -113,7 +124,8 @@ addBookBtn.addEventListener('click', () => {
 })
 
 cancelModal.addEventListener('click', () => {
-    modal.close();
+    resetForm();
+    modal.close();  
 })
 
 bookRead.addEventListener('click', () => {
