@@ -91,7 +91,7 @@ function addBookToDOM(title, author, pages, read){
 
     const authorLabel = document.createElement('span');
     authorLabel.classList.add('author');
-    const authorText = document.createTextNode(author);
+    const authorText = document.createTextNode(`Author: ${author}`);
     authorLabel.appendChild(authorText);
     cardBody.appendChild(authorLabel);
 
