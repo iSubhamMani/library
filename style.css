@@ -87,6 +87,7 @@ header > h1{
 
 .modal form .data-text input{
     border-bottom: 2px solid #b8b7b7;
+    font-family: inherit;
 }
 
 .modal form .data-text input:focus{
