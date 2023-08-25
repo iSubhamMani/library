@@ -11,13 +11,14 @@ const bookPages = document.getElementById('book-pages');
 const bookRead = document.getElementById('book-read');
 
 const myLibrary = [];
-let bookCounter = 0;
 
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book{
+    constructor (title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function resetForm(){
